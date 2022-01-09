@@ -20,20 +20,22 @@ const server = http.createServer((req, res) => {
     
     if (url === '/message' && method === 'POST') {
         const body = [];
-        // this is an event listener.
+        // this is an event listener. This is also a callback.
         req.on('data', (chunk) => {
             console.log(chunk);
             body.push(chunk);
         });
-        req.on('end', () => {
+        // this is a second event listener. Added the return here so this block of code will run before the setHeader line.
+        return req.on('end', () => {
             const parsedBody = Buffer.concat(body).toString();
             const message = parsedBody.split('=') [1];
-            fs.writeFileSync('message.txt', message);
+            // do not use .writeFileSync syntax to avoid blocking the execution of code after this file operation. Use .writeFile instead.
+            fs.writeFile('message.txt', message, err => {
+                res.statusCode = 302;
+                res.setHeader('Location', '/');
+                return res.end();
+            });
         });
-
-        res.statusCode = 302;
-        res.setHeader('Location', '/');
-        return res.end();
     }
     res.setHeader('Content-Type', 'text/html');
     res.write('<html>');
