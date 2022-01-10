@@ -1,21 +1,32 @@
 After completing the assignment, be sure to push to Github. You do not have to worry about pushing to Heroku this lesson.
 Please answer the questions in this text file and submit it to I-Learn.
 
-1. Copy and paste the URL for your source code repository (e.g., GitHub):
+1. Copy and paste the URL for your source code repository (e.g., GitHub): https://github.com/JulioCaballero63/CSE341.git
 
 3. Briefly list and describe the elements of the application that are functioning. 
+    - I was able to create the server.
+    - Imported core modules.
+    - Imported request handler.
+    - Created a listener on port 3000.
+    - Installed the package.json
+    - Installed npm.
+    - Installed node modules.
+    - Enabled and configured the debugger.
 
 4. Briefly describe any pieces of the assignment that are not yet working correctly.
+    - The program is functioning like the one in the videos.
 
 5. Briefly describe the "coolest" thing you learned while completing this assignment.
+    - There was so much information this week, the coolest thing for me is being able to create my own server.
 
 6. If you could change this assignment to be more effective or helpful, what would you change?
+    - The instruction in iLearn for this assignment are very confusing and the are links missing, that make this week much harder.
 
-7. Please select the category you feel best describes your assignment:
+7. Please select the category you feel best describes your assignment: 4
    1 - Some attempt was made
    2 - Developing, but significantly deficient
    3 - Slightly deficient, but still mostly adequate
    4 - Meets requirements
    5 - Shows creativity and excels above and beyond requirements
 
-8. Provide a brief justification (1-2 sentences) for selecting that category.
+8. Provide a brief justification (1-2 sentences) for selecting that category. I am not an expert, this is my first time using node.js.
