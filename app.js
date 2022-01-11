@@ -3,13 +3,12 @@
 // import core modules.
 const http = require('http');
 
-// import request handler function or other things from the request handler file.
-const routes = require('./routes');
+const express = require('express');
 
-console.log(routes.someText);
+const app = express();
 
 // create server using an anonymous arrow function.
-const server = http.createServer(routes.handler);
+const server = http.createServer();
 
 // create listener.
 server.listen(3000); // 3000 means the port to listen for requests at.
