@@ -9,6 +9,8 @@ const bodyParser = require('body-parser');
 // create app object.
 const app = express();
 
+app.set();
+
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
