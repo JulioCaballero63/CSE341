@@ -11,13 +11,6 @@ const bodyParser = require('body-parser');
 // create app object.
 const app = express();
 
-/*--Using handlebars as view engine--*/
-// app.engine('hbs', expressHbs({ layoutDir: 'views/layouts', defaultLayout: 'main-layout', extname: 'hbs' }));
-// app.set('view engine', 'hbs');
-
-/*--Using pug as view engine--*/
-// app.set('view engine', 'pug');
-
 app.set('view engine', 'ejs'); // set as ejs to use ejs as the template view engine.
 app.set('views', 'views');
 
