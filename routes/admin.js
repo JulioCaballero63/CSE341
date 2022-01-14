@@ -13,7 +13,7 @@ router.get('/add-product', (req, res, next) => {
 });
 
 router.post('/add-product', (req, res, next) => {
-    this.products.push({ title: req.body.title });
+    this.products.push({ title: req.body.title, description: req.body.description });
     res.redirect('/');
 });
 
