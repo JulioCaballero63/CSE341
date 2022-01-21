@@ -11,7 +11,7 @@ const errorController = require('./controllers/error');
 // create app object.
 const app = express();
 
-app.set('view engine', 'ejs'); // set as ejs to use ejs as the template view engine.
+app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 // const adminData = require('./routes/admin');
