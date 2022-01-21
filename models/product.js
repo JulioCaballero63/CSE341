@@ -2,7 +2,7 @@
  * This is the product Model
  * ***************/
 
-const products = [];
+// const products = [];
 const fs = require('fs');
 const path = require('path');
 const rootDir = require('../util/path');
