@@ -53,6 +53,7 @@ module.exports = class Product {
         });
     }
 
+
     static deleteById(id) {
         getProductsFromFile(products => {
             const product = products.find(prod => prod.id === id);
@@ -61,8 +62,8 @@ module.exports = class Product {
                 if (!err) {
                     Cart.deleteProduct(id, product.price);
                 }
-            })
-        })
+            });
+        });
     }
 
     static fetchAll(cb) {
