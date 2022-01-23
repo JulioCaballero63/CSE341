@@ -29,5 +29,5 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 // create listener.
-// app.listen(3000); // 3000 means the port to listen for requests at.
-app.listen(PATH);
+app.listen(3000); // 3000 means the port to listen for requests at.
+// app.listen(PATH);
