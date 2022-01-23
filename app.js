@@ -1,7 +1,7 @@
 /*--- Create a Node Server ---*/
 
 const path = require('path');
-const PATH = process.env.PORT || 5000;
+// const PATH = process.env.PORT || 5000;
 
 // import express.
 const express = require('express');
