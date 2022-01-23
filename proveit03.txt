@@ -1,0 +1,31 @@
+After completing the assignment, be sure to push to Github. You do not have to worry about pushing to Heroku this lesson.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your source code repository (e.g., GitHub): https://github.com/JulioCaballero63/CSE341.git
+
+3. Briefly list and describe the elements of the application that are functioning. 
+    - I follow along with the videos to implement MVC to my project.
+    - Created the admin, error, and shop controllers.
+    - My program is working properly like the instructors examples.
+    - Created the cart and product models.
+    - Added all of the views needed.
+    - Added the edit and delete buttons and they work properly.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+    - The program is functioning like the one in the videos.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+    - The coolest thing this week was being able to implement the MVC to my project.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+    - I would like to have more detailed on what needs to be done for the team assignment.
+
+7. Please select the category you feel best describes your assignment: 4
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+   - My project works like the one on the videos. But to be honest, with out the videos I would be completely lost. Going over so much info in a short time.
