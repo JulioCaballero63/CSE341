@@ -1,7 +1,7 @@
 /*--- Create a Node Server ---*/
 const path = require('path');
-const cors = require('cors');
-// const PATH = process.env.PORT || 3000;
+// const cors = require('cors');
+const PATH = process.env.PORT || 3000;
 
 // import express.
 const express = require('express');
@@ -31,6 +31,7 @@ app.use((req, res, next) => {
             next();
         })
         .catch(err => console.log(err));
+
 });
 
 app.use('/admin', adminRoutes);
@@ -42,23 +43,23 @@ app.use(errorController.get404);
 
 mongoConnect(client => {
     console.log(client);
-    app.listen(3000);
+    app.listen(PATH);
 });
 
 
-const corsOptions = {
-    origin: "https://cse341julioc.herokuapp.com/",
-    optionsSuccessStatus: 200
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin: "https://cse341julioc.herokuapp.com/",
+//     optionsSuccessStatus: 200
+// };
+// app.use(cors(corsOptions));
 
-const options = {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    family: 4
-};
+// const options = {
+//     useUnifiedTopology: true,
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false,
+//     family: 4
+// };
 
 // const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority";
 
