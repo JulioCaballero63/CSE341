@@ -1,6 +1,6 @@
 /*--- Create a Node Server ---*/
 const path = require('path');
-// const cors = require('cors');
+const cors = require('cors');
 const PATH = process.env.PORT || 3000;
 
 // import express.
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use((req, res, next) => {
-    User.findById('5baa2528563f16379fc8a610')
+    User.findById('61efd344479b87dd9f1fc3fb')
         .then(user => {
             req.user = new User(user.name, user.email, user.cart, user._id);
             next();
@@ -47,19 +47,19 @@ mongoConnect(client => {
 });
 
 
-// const corsOptions = {
-//     origin: "https://cse341julioc.herokuapp.com/",
-//     optionsSuccessStatus: 200
-// };
-// app.use(cors(corsOptions));
+const corsOptions = {
+    origin: "https://cse341julioc.herokuapp.com/",
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
-// const options = {
-//     useUnifiedTopology: true,
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false,
-//     family: 4
-// };
+const options = {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    family: 4
+};
 
 // const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority";
 
