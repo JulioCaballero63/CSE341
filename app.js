@@ -60,7 +60,7 @@ const options = {
     family: 4
 };
 
-// const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+// const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority";
 
 
 
