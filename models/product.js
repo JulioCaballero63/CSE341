@@ -1,7 +1,3 @@
-/******************* 
- * This is the product Model
- * ***************/
-
 const mongodb = require('mongodb');
 const getDb = require('../util/database').getDb;
 
@@ -17,7 +13,6 @@ class Product {
 
     save() {
         const db = getDb();
-
         let dbOp;
         if (this._id) {
             // Update the product

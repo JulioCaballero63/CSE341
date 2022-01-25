@@ -1,7 +1,3 @@
-/******************* 
- * This is the admin Controller
- * ***************/
-
 const Product = require('../models/product');
 
 exports.getAddProduct = (req, res, next) => {
@@ -28,7 +24,7 @@ exports.postAddProduct = (req, res, next) => {
     product
         .save()
         .then(result => {
-            console.log(result);
+            // console.log(result);
             console.log('Created Product');
             res.redirect('/admin/products');
         })

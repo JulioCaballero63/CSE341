@@ -1,5 +1,6 @@
 /*--- Create a Node Server ---*/
 const path = require('path');
+
 const cors = require('cors');
 const PATH = process.env.PORT || 3000;
 
@@ -25,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use((req, res, next) => {
-    User.findById('61efd344479b87dd9f1fc3fb')
+    User.findById("61f06de1479b87dd9f1fc41b")
         .then(user => {
             req.user = new User(user.name, user.email, user.cart, user._id);
             next();
@@ -41,8 +42,12 @@ app.use(errorController.get404);
 
 // app.listen(PATH);
 
-mongoConnect(client => {
-    console.log(client);
+// mongoConnect(client => {
+//     console.log(client);
+//     app.listen(PATH);
+// });
+
+mongoConnect(() => {
     app.listen(PATH);
 });
 
@@ -62,8 +67,6 @@ const options = {
 };
 
 // const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority";
-
-
 
 // mongoose
 //     .connect(
