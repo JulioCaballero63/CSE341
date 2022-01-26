@@ -7,7 +7,7 @@ class User {
     constructor(username, email, cart, id) {
         this.name = username;
         this.email = email;
-        this.cart = cart; // {items: []}
+        this.cart = cart;
         this._id = id;
     }
 
@@ -27,10 +27,7 @@ class User {
             newQuantity = this.cart.items[cartProductIndex].quantity + 1;
             updatedCartItems[cartProductIndex].quantity = newQuantity;
         } else {
-            updatedCartItems.push({
-                productId: new ObjectId(product._id),
-                quantity: newQuantity
-            });
+            updatedCartItems.push({ productId: new ObjectId(product._id), quantity: newQuantity });
         }
         const updatedCart = {
             items: updatedCartItems
