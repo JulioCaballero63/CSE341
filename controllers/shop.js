@@ -47,6 +47,9 @@ exports.getProduct = (req, res, next) => {
         .catch(err => console.log(err));
 };
 
+
+
+
 // with mongoose.
 exports.getIndex = (req, res, next) => {
     Product.find()
@@ -61,8 +64,6 @@ exports.getIndex = (req, res, next) => {
             console.log(err);
         });
 };
-
-
 
 // *************** without mongoose.
 // exports.getIndex = (req, res, next) => {
@@ -79,10 +80,15 @@ exports.getIndex = (req, res, next) => {
 //         });
 // };
 
+
+
+
+// with mongoose.
 exports.getCart = (req, res, next) => {
     req.user
-        .getCart()
-        .then(products => {
+        .populate('cart.items.productId')
+        .then(user => {
+            const products = user.cart.items;
             res.render('shop/cart', {
                 path: '/cart',
                 pageTitle: 'Your Cart',
@@ -91,6 +97,23 @@ exports.getCart = (req, res, next) => {
         })
         .catch(err => console.log(err));
 };
+
+// without mongoose.
+// exports.getCart = (req, res, next) => {
+//     req.user
+//         .getCart()
+//         .then(products => {
+//             res.render('shop/cart', {
+//                 path: '/cart',
+//                 pageTitle: 'Your Cart',
+//                 products: products
+//             });
+//         })
+//         .catch(err => console.log(err));
+// };
+
+
+
 
 exports.postCart = (req, res, next) => {
     const prodId = req.body.productId;
@@ -104,15 +127,35 @@ exports.postCart = (req, res, next) => {
         });
 };
 
+
+
+// with mongoose.
 exports.postCartDeleteProduct = (req, res, next) => {
     const prodId = req.body.productId;
     req.user
-        .deleteItemFromCart(prodId)
+        .removeFromCart(prodId)
         .then(result => {
             res.redirect('/cart');
         })
         .catch(err => console.log(err));
 };
+
+// without mongoose.
+// exports.postCartDeleteProduct = (req, res, next) => {
+//     const prodId = req.body.productId;
+//     req.user
+//         .deleteItemFromCart(prodId)
+//         .then(result => {
+//             res.redirect('/cart');
+//         })
+//         .catch(err => console.log(err));
+// };
+
+
+
+
+
+
 
 exports.postOrder = (req, res, next) => {
     let fetchedCart;
@@ -123,6 +166,12 @@ exports.postOrder = (req, res, next) => {
         })
         .catch(err => console.log(err));
 };
+
+
+
+
+
+
 
 exports.getOrders = (req, res, next) => {
     req.user
