@@ -10,7 +10,6 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const errorController = require('./controllers/error');
-// const mongoConnect = require('./util/database').mongoConnect;
 const User = require('./models/user');
 
 // create app object.
@@ -35,16 +34,6 @@ app.use((req, res, next) => {
         })
         .catch(err => console.log(err));
 });
-
-// without mongoose.
-// app.use((req, res, next) => {
-//     User.findById("61f06de1479b87dd9f1fc41b")
-//         .then(user => {
-//             req.user = new User(user.name, user.email, user.cart, user._id);
-//             next();
-//         })
-//         .catch(err => console.log(err));
-// });
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);

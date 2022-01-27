@@ -17,24 +17,6 @@ exports.getProducts = (req, res, next) => {
         });
 };
 
-
-//  **************without mongoose.
-// exports.getProducts = (req, res, next) => {
-//     Product.fetchAll()
-//         .then(products => {
-//             res.render('shop/product-list', {
-//                 prods: products,
-//                 pageTitle: 'All Products',
-//                 path: '/products'
-//             });
-//         })
-//         .catch(err => {
-//             console.log(err);
-//         });
-// };
-
-
-// ********** this export works with and without mongoose, because mongoose has the findById method.
 exports.getProduct = (req, res, next) => {
     const prodId = req.params.productId;
     Product.findById(prodId)
@@ -48,10 +30,6 @@ exports.getProduct = (req, res, next) => {
         .catch(err => console.log(err));
 };
 
-
-
-
-// with mongoose.
 exports.getIndex = (req, res, next) => {
     Product.find()
         .then(products => {
@@ -66,25 +44,6 @@ exports.getIndex = (req, res, next) => {
         });
 };
 
-// *************** without mongoose.
-// exports.getIndex = (req, res, next) => {
-//     Product.fetchAll()
-//         .then(products => {
-//             res.render('shop/index', {
-//                 prods: products,
-//                 pageTitle: 'Shop',
-//                 path: '/'
-//             });
-//         })
-//         .catch(err => {
-//             console.log(err);
-//         });
-// };
-
-
-
-
-// with mongoose.
 exports.getCart = (req, res, next) => {
     req.user
         .populate('cart.items.productId')
@@ -99,23 +58,6 @@ exports.getCart = (req, res, next) => {
         .catch(err => console.log(err));
 };
 
-// without mongoose.
-// exports.getCart = (req, res, next) => {
-//     req.user
-//         .getCart()
-//         .then(products => {
-//             res.render('shop/cart', {
-//                 path: '/cart',
-//                 pageTitle: 'Your Cart',
-//                 products: products
-//             });
-//         })
-//         .catch(err => console.log(err));
-// };
-
-
-
-
 exports.postCart = (req, res, next) => {
     const prodId = req.body.productId;
     Product.findById(prodId)
@@ -128,9 +70,6 @@ exports.postCart = (req, res, next) => {
         });
 };
 
-
-
-// with mongoose.
 exports.postCartDeleteProduct = (req, res, next) => {
     const prodId = req.body.productId;
     req.user
@@ -140,22 +79,6 @@ exports.postCartDeleteProduct = (req, res, next) => {
         })
         .catch(err => console.log(err));
 };
-
-// without mongoose.
-// exports.postCartDeleteProduct = (req, res, next) => {
-//     const prodId = req.body.productId;
-//     req.user
-//         .deleteItemFromCart(prodId)
-//         .then(result => {
-//             res.redirect('/cart');
-//         })
-//         .catch(err => console.log(err));
-// };
-
-
-
-
-
 
 // with mongoose.
 exports.postOrder = (req, res, next) => {
@@ -183,21 +106,6 @@ exports.postOrder = (req, res, next) => {
         .catch(err => console.log(err));
 };
 
-// without mongoose.
-// exports.postOrder = (req, res, next) => {
-//     let fetchedCart;
-//     req.user
-//         .addOrder()
-//         .then(result => {
-//             res.redirect('/orders');
-//         })
-//         .catch(err => console.log(err));
-// };
-
-
-
-
-// with mongoose.
 exports.getOrders = (req, res, next) => {
     Order.find({ "user.userId": req.user._id })
         .then(orders => {
@@ -209,17 +117,3 @@ exports.getOrders = (req, res, next) => {
         })
         .catch(err => console.log(err));
 };
-
-// without mongoose.
-// exports.getOrders = (req, res, next) => {
-//     req.user
-//         .getOrders()
-//         .then(orders => {
-//             res.render('shop/orders', {
-//                 path: '/orders',
-//                 pageTitle: 'Your Orders',
-//                 orders: orders
-//             });
-//         })
-//         .catch(err => console.log(err));
-// };
