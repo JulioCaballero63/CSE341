@@ -1,7 +1,7 @@
 /*--- Create a Node Server ---*/
 const path = require('path');
 
-// const cors = require('cors');
+const cors = require('cors');
 const PATH = process.env.PORT || 3000;
 
 // import express.
@@ -40,39 +40,27 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-// mongoConnect(() => {
-//     app.listen(PATH);
-// });
+const corsOptions = {
+    origin: "https://cse341julioc.herokuapp.com/",
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
-// const corsOptions = {
-//     origin: "https://cse341julioc.herokuapp.com/",
-//     optionsSuccessStatus: 200
-// };
-// app.use(cors(corsOptions));
+const options = {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    // useCreateIndex: true,
+    // useFindAndModify: false,
+    family: 4
+};
 
-// const options = {
-//     useUnifiedTopology: true,
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false,
-//     family: 4
-// };
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority";
 
-// const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority";
-
-// mongoose.connect(
-//     MONGODB_URL, options
-// )
-//     .then(result => {
-//         // This should be your user handling code implement following the course videos
-//         app.listen(PORT);
-//     })
-//     .catch(err => {
-//         console.log(err);
-//     });
-
-mongoose.connect('mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority')
+mongoose.connect(
+    MONGODB_URL, options
+)
     .then(result => {
+        // This should be your user handling code implement following the course videos
         User.findOne().then(user => {
             if (!user) {
                 const user = new User({
@@ -86,9 +74,37 @@ mongoose.connect('mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.ne
             }
         });
         app.listen(PATH);
-    }).catch(err => {
+    })
+    .catch(err => {
         console.log(err);
     });
+
+
+
+
+
+
+
+
+
+// mongoose.connect('mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority')
+//     .then(result => {
+//         User.findOne().then(user => {
+//             if (!user) {
+//                 const user = new User({
+//                     name: 'Julio',
+//                     email: 'julio@test.com',
+//                     cart: {
+//                         items: []
+//                     }
+//                 });
+//                 user.save();
+//             }
+//         });
+//         app.listen(PATH);
+//     }).catch(err => {
+//         console.log(err);
+//     });
 
 
 
