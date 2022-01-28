@@ -15,8 +15,14 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
+
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority";
 // create app object.
 const app = express();
+const store = new MongoDBStore({
+    uri: MONGODB_URI,
+    collection: 'sessions'
+});
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -32,18 +38,18 @@ const authRoutes = require('./routes/auth');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
-    session({ secret: 'my secret', resave: false, saveUninitialized: false })
+    session({ secret: 'my secret', resave: false, saveUninitialized: false, store: store })
 );
 
 
-app.use((req, res, next) => {
-    User.findById("61f0ea0e83e5b0fb4d12cfcb")
-        .then(user => {
-            req.user = user;
-            next();
-        })
-        .catch(err => console.log(err));
-});
+// app.use((req, res, next) => {
+//     User.findById("61f0ea0e83e5b0fb4d12cfcb")
+//         .then(user => {
+//             req.user = user;
+//             next();
+//         })
+//         .catch(err => console.log(err));
+// });
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
@@ -66,10 +72,11 @@ const options = {
     family: 4
 };
 
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority";
+// const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority";
 
 mongoose.connect(
-    MONGODB_URL, options
+    MONGODB_URI, options
+    // MONGODB_URL, options
 )
     .then(result => {
         // This should be your user handling code implement following the course videos
