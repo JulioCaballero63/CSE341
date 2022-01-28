@@ -1,0 +1,33 @@
+After completing the assignment, be sure to push to Github. You do not have to worry about pushing to Heroku this lesson.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your source code repository (e.g., GitHub): https://github.com/JulioCaballero63/CSE341.git
+
+2. Heroku app link. Please click on login in the nav bar to go to the login view, and click the login button, no need to type any credentials, the app will then show the rest of the nav items: 
+    https://cse341julioc.herokuapp.com 
+
+3. Briefly list and describe the elements of the application that are functioning. 
+    - All of the navigation items are working properly.
+    - Added the login and logout items to nav bar.
+    - When the user is not logged in, only the shop and products items show on the nav bar, the add to cart button does not show on the products.
+    - When the user is logged in, the rest of the nav items show, also, the add to cart button shows.
+    - The Heroku app and my programing environment are connecting properly to MongoDb and compass.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+    - The program is functioning like the one in the videos.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+    - How to create a noSql database and connected to my app.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+    - Better instructions would be appreciated, some times the instruction iLearn and what the videos show do not match, like the last 2 steps on the team activity this week.
+
+7. Please select the category you feel best describes your assignment: 5
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+   - My project works like the one on the videos. I also added some of the functionality from next week's videos.
