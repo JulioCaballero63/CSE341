@@ -31,10 +31,6 @@ const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
 
-
-
-// const { connect } = require('http2');
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
@@ -78,24 +74,12 @@ const options = {
 
 // const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority";
 
-mongoose.connect(
-    MONGODB_URI, options
-    // MONGODB_URL, options
-)
+mongoose
+    .connect(
+        MONGODB_URI, options
+        // MONGODB_URL, options
+    )
     .then(result => {
-        // This should be your user handling code implement following the course videos
-        User.findOne().then(user => {
-            if (!user) {
-                const user = new User({
-                    name: 'Julio',
-                    email: 'julio@test.com',
-                    cart: {
-                        items: []
-                    }
-                });
-                user.save();
-            }
-        });
         app.listen(PATH);
     })
     .catch(err => {
