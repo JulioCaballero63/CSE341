@@ -93,6 +93,15 @@ exports.postSignup = (req, res, next) => {
             })
             .then(result => {
                 res.redirect('/login');
+                return transporter.sendMail({
+                    to: email,
+                    from: 'jcaballero1@byui.edu',
+                    subject: 'Signup succeeded!',
+                    html: '<h1>You successfully signed up!</h1>'
+                });
+
+            }).catch(err => {
+                console.log(err);
             });
     })
         .catch(err => {
