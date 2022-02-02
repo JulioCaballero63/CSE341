@@ -2,6 +2,7 @@
 const path = require('path');
 const cors = require('cors');
 const PATH = process.env.PORT || 3000;
+require('dotenv').config();
 
 // import express.
 const express = require('express');
@@ -19,7 +20,8 @@ const errorController = require('./controllers/error');
 const User = require('./models/user');
 
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority";
+const MONGODB_URI = process.env.MONGODB_URI || process.env.MONGODB_KEY;
+
 // create app object.
 const app = express();
 const store = new MongoDBStore({
@@ -89,12 +91,9 @@ const options = {
     family: 4
 };
 
-// const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority";
-
 mongoose
     .connect(
         MONGODB_URI, options
-        // MONGODB_URL, options
     )
     .then(result => {
         app.listen(PATH);
@@ -103,26 +102,6 @@ mongoose
         console.log(err);
     });
 
-
-
-// mongoose.connect('mongodb+srv://Admin:VTjyL1VchDYEddmH@cluster0.2xo0r.mongodb.net/shop?retryWrites=true&w=majority')
-//     .then(result => {
-//         User.findOne().then(user => {
-//             if (!user) {
-//                 const user = new User({
-//                     name: 'Julio',
-//                     email: 'julio@test.com',
-//                     cart: {
-//                         items: []
-//                     }
-//                 });
-//                 user.save();
-//             }
-//         });
-//         app.listen(PATH);
-//     }).catch(err => {
-//         console.log(err);
-//     });
 
 
 
