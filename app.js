@@ -20,12 +20,12 @@ const errorController = require('./controllers/error');
 const User = require('./models/user');
 
 
-const MONGODB_URI = process.env.MONGODB_URI || process.env.MONGODB_KEY;
+const MONGODB_URL = process.env.MONGODB_URL;
 
 // create app object.
 const app = express();
 const store = new MongoDBStore({
-    uri: MONGODB_URI,
+    uri: MONGODB_URL,
     collection: 'sessions'
 });
 
