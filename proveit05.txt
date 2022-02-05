@@ -1,0 +1,31 @@
+1. Copy and paste the URL for your source code repository (e.g., GitHub): https://github.com/JulioCaballero63/CSE341.git
+
+2. Heroku app link. You will need to create a user only the emil and password is required for now, no need to fill in the confirm password input for now. https://cse341julioc.herokuapp.com 
+
+3. Briefly list and describe the elements of the application that are functioning. 
+    - All of the navigation items are working properly.
+    - Added the sign up link to the navigation.
+    - Added authentication to the site.
+    - Added the login and logout items to nav bar.
+    - Added password protection with hash.
+    - Added protection against CSRF attacks.
+    - Added the ability to send email for confirmations of a successful sign up.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+    - The capability of sending emails stopped working when I pushed my code to GitHub due security issues, SendGrid disabled my account, I was not aware about having to conceal API keys until then, the videos did not mention anything about it.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+    - How to add authentication and protection against CSRF attacks.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+    - Adding a section about environment variables and other ways to protect sensitive information from being published when working with GitHub.
+
+7. Please select the category you feel best describes your assignment: 5
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+   - My project works like the one on the videos. My project is deployed to Heroku and working properly.
