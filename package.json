@@ -1,7 +1,7 @@
 {
   "name": "cse341",
   "version": "1.0.0",
-  "description": "Complete Node.js Guide",
+  "description": "CSE341 Project",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -29,10 +29,9 @@
     "connect-mongodb-session": "^3.1.1",
     "cors": "^2.8.5",
     "csurf": "^1.11.0",
-    "dotenv": "^15.0.0",
+    "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
-    "express-handlebars": "3.0",
     "express-session": "^1.17.2",
     "express-validator": "^6.14.0",
     "mongodb": "^4.3.1",
