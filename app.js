@@ -106,7 +106,7 @@ app.use(cors(corsOptions));
 const options = {
     useUnifiedTopology: true,
     useNewUrlParser: true,
-    family: 4
+    // family: 4
 };
 
 mongoose
