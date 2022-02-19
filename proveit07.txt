@@ -1,0 +1,25 @@
+1. Copy and paste the URL for your source code repository (e.g., GitHub): https://github.com/JulioCaballero63/CSE341.git
+
+2. Heroku app link. You will need to create a user only the emil and password is required for now, no need to fill in the confirm password input for now. https://cse341julioc.herokuapp.com 
+
+3. Briefly list and describe the elements of the application that are functioning. 
+    - The application is working as shown in the videos.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+    - The capability of sending emails SendGrid is showing that the email are being delivered, but I do not get them on my outlook email.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+    - I now have an idea of how to use nodejs and express, how to use NoSQL databases.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+    - This was my first time using nodejs, there is so much information to learn in a short amount of time, I will need to go back and re-watch the whole course again to be able to understand it better, I also need to practice adding things like inventory tracking, I can hard code unit available on stock, but I want to make it so it will automatically change once an item is sold.
+
+7. Please select the category you feel best describes your assignment: 4
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+   - My project works like the one on the videos. I changed the style a little bit, and added the capability of uploading images.
