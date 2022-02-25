@@ -1,0 +1,25 @@
+1. Copy and paste the URL for your source code repository (e.g., GitHub): https://github.com/JulioCaballero63/prove_week8_REST_API.git
+
+2. Heroku app link: https://cse341julioc.herokuapp.com 
+
+3. Briefly list and describe the elements of the application that are functioning. 
+    - I believe the REST_API is working as requested in the prove activity.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+    - The activity says not to change the front end code, the page does not look very good in my opinion because there is text too close to each other.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+    - How to create the endpoints.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+    - Change the due date of the team activity to Fridays of Saturdays, it is too much to material to cover by Wednesday.
+
+7. Please select the category you feel best describes your assignment: 4
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+   - I think my prove assignment works as required in the activity instructions.
